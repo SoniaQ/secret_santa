@@ -5,7 +5,7 @@ describe Participant do
 
   describe '#name' do
     it 'returns the name' do
-      exepect(sonia.name).to equal 'Sonia'
+      expect(sonia.name).to equal 'Sonia'
     end
   end
 end
