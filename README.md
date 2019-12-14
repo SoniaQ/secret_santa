@@ -4,6 +4,19 @@ Secret Santa is a single-page web based application that allows to generate Secr
 
 User Stories
 --------
+```
+As a user
+I would like to enter mine and other people's names
+So that each person can be randomly allocated a Secret Santa
+
+As a user
+I would like an email address to be captured for each person
+So that everyone anonymously receives their Secret Santa name
+
+As a user
+I would like all names and emails to be safely stored
+So that each name can be randomly paired
+```
 
 Build Status
 --------
