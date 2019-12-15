@@ -15,13 +15,15 @@ feature 'homepage' do
 
   scenario 'a user can submit name and email' do
     visit '/'
-    fill_in(:name, with: 'Sonia')
+    fill_in(:participant_1_name, with: 'Sonia')
     fill_in(:email, with: 'sonia@random.com')
     fill_in(:names, with: 'Daniel')
     fill_in(:emails, with: 'daniel@random.com')
     click_button('Submit')
-    expect(page).to have_content('Sonia, sonia@random.com')
-    expect(page).to have_content('Daniel, daniel@random.com')
+    visit '/details'
+    expect(page).to have_content('Sonia')
+    # expect(page).to have_content('Sonia, sonia@random.com')
+    # expect(page).to have_content('Daniel, daniel@random.com')
   end
 
 end

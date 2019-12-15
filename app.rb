@@ -1,5 +1,5 @@
 require 'sinatra/base'
-require 'participant'
+require './lib/participant'
 
 class SecretSanta < Sinatra::Base
 
@@ -12,16 +12,12 @@ class SecretSanta < Sinatra::Base
   end
 
   post '/names' do
-    $participant_1 = Participant.new(params[:name])
-    # $p_1_email = params[:email]
-    # @names = params[:names]
-    # @emails = params[:emails]
-    # redirect '/details'
+    $participant_1 = Participant.new(params[:participant_1_name])
     redirect '/details'
   end
 
   get '/details' do
-    @participant_1 = $participant_1.name
+    @participant_1_name = $participant_1.name
     erb :details
   end
 
