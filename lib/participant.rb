@@ -1,8 +1,9 @@
 class Participant
-  attr_reader :name
+  attr_reader :name, :email
 
-  def initialize(name)
+  def initialize(name, email)
     @name = name
+    @email = email
   end
 
 end
