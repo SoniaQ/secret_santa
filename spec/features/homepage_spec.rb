@@ -17,12 +17,12 @@ feature 'homepage' do
     visit '/'
     fill_in(:participant_1_name, with: 'Sonia')
     fill_in(:participant_1_email, with: 'sonia@random.com')
-    fill_in(:names, with: 'Daniel')
-    fill_in(:emails, with: 'daniel@random.com')
+    fill_in(:participant_2_name, with: 'Daniel')
+    fill_in(:participant_2_email, with: 'daniel@random.com')
     click_button('Submit')
     visit '/details'
     expect(page).to have_content('Sonia, sonia@random.com')
-    # expect(page).to have_content('Daniel, daniel@random.com')
+    expect(page).to have_content('Daniel, daniel@random.com')
   end
 
 end
