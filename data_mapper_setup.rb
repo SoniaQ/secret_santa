@@ -6,7 +6,7 @@ env = ENV['ENVIRONMENT'] || 'development'
 DataMapper.setup(:default, "postgres://localhost/secret_santa_#{env}")
 
 # require each model individually - the path may vary depending on your file structure.
-require './app/lib/participant.rb'
+require './lib/participant'
 
 # After declaring your models, you should finalise them
 DataMapper.finalize
