@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require './lib/participant'
+require './lib/data_mapper_setup'
 
 class SecretSanta < Sinatra::Base
 
