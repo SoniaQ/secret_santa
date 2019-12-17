@@ -141,7 +141,7 @@ PLATFORMS
 
 DEPENDENCIES
   capybara
-  data_mapper
+  data_mapper (= 1.2.0)
   dm-postgres-adapter
   launchy
   pg

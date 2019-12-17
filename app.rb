@@ -13,8 +13,9 @@ class SecretSanta < Sinatra::Base
   end
 
   post '/names' do
-    $participant_1 = Participant.new(params[:participant_1_name], params[:participant_1_email])
-    $participant_2 = Participant.new(params[:participant_2_name], params[:participant_2_email])
+    # $participant_1 = Participant.new(params[:participant_1_name], params[:participant_1_email])
+    # $participant_2 = Participant.new(params[:participant_2_name], params[:participant_2_email])
+    
     redirect '/details'
   end
 
