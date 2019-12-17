@@ -13,18 +13,31 @@ class SecretSanta < Sinatra::Base
   end
 
   post '/names' do
-    # $participant_1 = Participant.new(params[:participant_1_name], params[:participant_1_email])
-    # $participant_2 = Participant.new(params[:participant_2_name], params[:participant_2_email])
-    
-    redirect '/details'
+    participant_1 = Participant.new(name: params[:participant_1_name], email: params[:participant_1_email])
+    participant_2 = Participant.new(name: params[:participant_2_name], email: params[:participant_2_email])
+
+    participant_1.save
+    participant_2.save
+
+    participants = Participant.all
+    receivers = participants.map(&:name)
+
+    participants.each do |participant|
+      if participant.name != receivers.last
+        participant.receiver = receivers.pop
+        participant.save
+      else
+        participant.receiver = receivers.pop[0]
+        participant.save
+      end
+    end
+
+    redirect '/pairs'
   end
 
-  get '/details' do
-    @participant_1_name = $participant_1.name
-    @participant_1_email = $participant_1.email
-    @participant_2_name = $participant_2.name
-    @participant_2_email = $participant_2.email
-    erb :details
+  get '/pairs' do
+    # @participants = Participant.all
+    # erb :pairs
   end
 
   run! if app_file == $0
