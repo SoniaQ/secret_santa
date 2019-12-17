@@ -22,6 +22,7 @@ Build Status
 --------
 Successfully created participants table via data_mapper.
 ![Domain Model](https://github.com/SoniaQ/secret_santa/blob/master/images/secret_santa.png)
+Not yet able to populate table - code requires refactoring.
 
 How it Works
 --------
