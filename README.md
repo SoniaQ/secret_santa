@@ -20,6 +20,9 @@ So that each name can be randomly paired
 
 Build Status
 --------
+Successfully created participants table via data_mapper.
+![Domain Model](https://github.com/SoniaQ/secret_santa/blob/master/images/secret_santa.png)
+
 How it Works
 --------
 Installation
