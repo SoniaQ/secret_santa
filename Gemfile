@@ -1,23 +1,15 @@
 # frozen_string_literal: true
 source "https://rubygems.org"
 
-ruby '2.6.3'
-
-gem 'pg'
 gem 'sinatra'
-# gem 'data_mapper'
-gem 'data_mapper', '1.2.0'
+gem 'data_mapper'
 gem 'dm-postgres-adapter'
 gem 'twilio-ruby'
+gem 'bcrypt'
 
 group :test do
   gem 'capybara'
   gem 'rspec'
-  gem 'rubocop', '0.71.0'
-  gem 'simplecov-console', require: false
-end
-
-group :development do
-  gem 'launchy'
-  gem 'shotgun'
+  gem 'rubocop'
+  gem 'simplecov-console'
 end

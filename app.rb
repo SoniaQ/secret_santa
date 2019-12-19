@@ -1,44 +1,31 @@
 require 'sinatra/base'
-# require 'data_mapper'
+# require "./lib/login.rb"
 require_relative './data_mapper_setup'
+require "./lib/user"
 
 class SecretSanta < Sinatra::Base
 
-  # get '/' do
-  #   'Secret Santa!'
-  # end
+  # enable :sessions
 
-  get '/' do
-    erb :index
+  get "/" do
+      erb :index
   end
 
-  post '/names' do
-    participant_1 = Participant.new(name: params[:participant_1_name], email: params[:participant_1_email])
-    participant_2 = Participant.new(name: params[:participant_2_name], email: params[:participant_2_email])
+  post "/" do
 
-    participant_1.save
-    participant_2.save
+puts "hey arnold"
+    @user = User.new(name: params[:name],
+             number: params[:number],
+             password: params[:password],
+             password_confirmation: params[:password_confirmation])
+puts "hi siba"
+    @user.save
 
-    participants = Participant.all
-    receivers = participants.map(&:name)
 
-    participants.each do |participant|
-      if participant.name != receivers.last
-        participant.receiver = receivers.pop
-        participant.save
-      else
-        participant.receiver = receivers.pop[0]
-        participant.save
-      end
-    end
-
-    redirect '/pairs'
+    redirect "/"
   end
 
-  get '/pairs' do
-    # @participants = Participant.all
-    # erb :pairs
-  end
 
-  run! if app_file == $0
 end
+
+require_relative "./controllers/addsantas"
