@@ -9,6 +9,7 @@ gem 'sinatra'
 gem 'data_mapper', '1.2.0'
 gem 'dm-postgres-adapter'
 gem 'twilio-ruby'
+gem 'dotenv'
 
 group :test do
   gem 'capybara'
