@@ -1,7 +1,7 @@
 require 'twilio-ruby'
-require 'dotenv'
-Dotenv.load('../.env')
-require 'byebug'
+# require 'dotenv'
+# Dotenv.load('../.env')
+# require 'byebug'
 
 class SMS
   def self.batch_notify(participants)
